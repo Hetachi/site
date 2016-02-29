@@ -13,3 +13,6 @@
 .nav--link {
   text-decoration: none;
 }
+.nav--item .nav--item {
+  display:none;
+}
