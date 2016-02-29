@@ -1,1 +1,15 @@
-#
+.nav--items {
+  list-style-type: none;
+  background: gray;
+  padding: 10px;
+}
+.nav--item {
+  display: inline;
+  font-size: 16pt;
+  margin:0px;
+  padding: 5px;
+
+}
+.nav--link {
+  text-decoration: none;
+}
