@@ -16,3 +16,8 @@
 .nav--item .nav--item {
   display:none;
 }
+@media (max-width: 480px) {
+  main {
+    font-size: 50px;
+  }
+}
