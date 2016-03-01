@@ -1,5 +1,5 @@
 define(['jquery', 'underscore', 'backbone', 'views/default'],
-function ($, _, Backbone, IndexView) {
+function ($, _, Backbone, DefaultView) {
   var SiteRouter = Backbone.Router.extend({
     routes: {
       '*other': 'defaultAction'
