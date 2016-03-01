@@ -53,7 +53,8 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 't
 
     render: function(pageType){
       if (debug === "TRUE") {
-        console.log(pageType);
+        var debugtext = pageType + " page loaded";
+        console.log(debugtext);
       }
       var compiledTemplate = Mustache.render( pageTemplate, this.data[pageType] );
       this.$el.html( compiledTemplate );
