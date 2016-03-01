@@ -4,7 +4,7 @@ var app = express();
 //app.use(express.static(__dirname + '/static'));
 
 app.get('/', function (req, res) {
-  res.render('templates/page.mustache');
+  res.render('index.html');
 });
 
 app.listen(3000, function () {

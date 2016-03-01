@@ -22,7 +22,9 @@ require.config({
     }
   }
 });
-
+/// DEBUG OPTION
+var debug = "TRUE";
+////////////////////////
 require(['app'], function (App) {
   App.initialize();
 });
