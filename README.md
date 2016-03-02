@@ -9,3 +9,6 @@ bower
 normalize-css
 requirejs
 text
+
+gulp and chef to automate installations
+vagrant for virtualization
