@@ -1,6 +1,6 @@
 define(['jquery', 'underscore', 'backbone', 'mustache', '/js/collections/pages.js','text!/templates/pages.mustache'], function ($, _, Backbone, Mustache, PagesCollection, pagesTemplate) {
   var MultiPageView = Backbone.View.extend({
-    el: $('.content'),
+    elPages: $('.content'),
     collection: {},
 
     initialize: function() {
@@ -12,7 +12,7 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/collections/pages.j
     render: function(pageType){
       this.data = this.collection.toJSON();
       var compiledPagesTemplate = Mustache.render(pagesTemplate, this);
-      this.$el.html(compiledPagesTemplate);
+      this.elPages.html(compiledPagesTemplate);
     }
   });
   return MultiPageView;

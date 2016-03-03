@@ -5,7 +5,7 @@ function ($, _, Backbone, DefaultView, AboutView, ContactView, MultiPageView) {
       'about' : 'aboutAction',
       'contact' : 'contactAction',
       'loadmore' : 'loadmoreAction',
-      '': 'mainAction',
+      '' : 'mainAction',
       '*other': 'errorAction',
     }
   });

@@ -43,7 +43,8 @@ body {
 
 @media (max-width: 480px) {
   main {
-    font-size: 50px; } }
+    font-size: 12px;
+    font-weight: bold; } }
 .sk-circle {
   margin: 100px auto;
   width: 40px;
