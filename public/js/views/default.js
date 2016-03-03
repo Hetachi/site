@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 'text!/templates/page.mustache', 'text!/templates/head.mustache','text!/templates/mainmenu.mustache'], function ($, _, Backbone, Mustache, PageModel, pageTemplate, headTemplate, menuTemplate) {
+define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 'text!/templates/page.mustache', 'text!/templates/head.mustache','text!/templates/mainmenu.mustache', 'text!/templates/error.mustache'], function ($, _, Backbone, Mustache, PageModel, pageTemplate, headTemplate, menuTemplate, errorTemplate) {
   var DefaultView = Backbone.View.extend({
     el: $('.content'),
     data: {},
@@ -11,21 +11,22 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 't
 
     initialize: function() {
       this.data = {
-        main: {
-        sitename: 'Main',
-        title: 'Default page',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.t in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          main: {
+          title: 'Main',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.t in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        },
+          about: {
+          title: 'Contact page',
+          content: 'Lorem ipsum dolon culpa qui officia deserunt mollit anim id est laborum.'
+        },
+          contact: {
+          title: 'About me page',
+          content: 'Lorem ipsum dolor.'
+        },
+        error: {
+          title: 'Error 404 page not found',
+          content: 'Where is my page?'
       },
-        about: {
-        sitename: 'Main / Contacts',
-        title: 'Contact page',
-        content: 'Lorem ipsum dolon culpa qui officia deserunt mollit anim id est laborum.'
-      },
-        contact: {
-        sitename: 'Main / About',
-        title: 'About me page',
-        content: 'Lorem ipsum dolor.'
-      }
       };
       this.data2 = {
         main: {
@@ -36,18 +37,24 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 't
       },
         contact: {
         sitename: 'Main / Contacts',
-      }
+      },
+      error: {
+        sitename: 'Main / 404 Error',
+      },
       };
       this.data3 = {
-        main: {
-        mainindex: 'Main',
+          main: {
+          mainindex: 'Main',
+        },
+          about: {
+          mainindex: '<a href="#">Main</a>',
+        },
+          contact: {
+          mainindex: '<a href="#">Main</a>',
+        },
+        error: {
+          mainindex: '<a href="#">Main</a>',
       },
-        about: {
-        mainindex: '<a href="#">Main</a>',
-      },
-        contact: {
-        mainindex: '<a href="#">Main</a>',
-      }
       };
     },
 
