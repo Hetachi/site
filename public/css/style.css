@@ -1,0 +1,26 @@
+.nav--items {
+  padding: 10px;
+  list-style-type: none;
+  background: gray; }
+
+.nav--item {
+  padding: 5px;
+  display: inline;
+  font-size: 16pt;
+  margin: 0px; }
+
+body {
+  padding-left: 30px;
+  padding-right: 30px; }
+
+.nav--link {
+  text-decoration: none; }
+
+.nav--item .nav--item {
+  display: none; }
+
+@media (max-width: 480px) {
+  main {
+    font-size: 50px; } }
+
+/*# sourceMappingURL=style.css.map */
