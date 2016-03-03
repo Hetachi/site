@@ -4,6 +4,7 @@ function ($, _, Backbone, DefaultView, AboutView, ContactView) {
     routes: {
       'about' : 'aboutAction',
       'contact' : 'contactAction',
+      'loadmore' : 'loadmoreAction',
       '': 'mainAction',
       '*other': 'errorAction',
     }
@@ -23,6 +24,9 @@ function ($, _, Backbone, DefaultView, AboutView, ContactView) {
     });
     siteRouter.on('route:mainAction', function(){
       defaultView.render('main');
+    });
+    siteRouter.on('route:loadmoreAction', function(){
+      defaultView.render('loadmore');
     });
     Backbone.history.start();
   };

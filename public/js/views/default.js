@@ -13,20 +13,29 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 't
       this.data = {
           main: {
           title: 'Main',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.t in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.t in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          loadmore: '<a href="#loadmore">Load more </a>',
         },
           about: {
           title: 'Contact page',
-          content: 'Lorem ipsum dolon culpa qui officia deserunt mollit anim id est laborum.'
+          content: 'Lorem ipsum dolon culpa qui officia deserunt mollit anim id est laborum.',
+          loadmore: '',
         },
           contact: {
           title: 'About me page',
-          content: 'Lorem ipsum dolor.'
+          content: 'Lorem ipsum dolor.',
+          loadmore: '',
         },
-        error: {
+          loadmore: {
+          title: 'Loaded more content here you go:',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          loadmore: '',
+        },
+          error: {
           title: 'Error 404 page not found',
-          content: 'Where is my page?'
-      },
+          content: 'Where is my page?',
+          loadmore: '',
+        },
       };
       this.data2 = {
         main: {
@@ -37,6 +46,9 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 't
       },
         contact: {
         sitename: 'Main / Contacts',
+      },
+        loadmore: {
+        sitename: 'Main',
       },
       error: {
         sitename: 'Main / 404 Error',
@@ -51,6 +63,9 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 't
         },
           contact: {
           mainindex: '<a href="#">Main</a>',
+        },
+          loadmore: {
+          mainindex: 'Main',
         },
         error: {
           mainindex: '<a href="#">Main</a>',
