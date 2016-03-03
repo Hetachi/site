@@ -59,16 +59,16 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 't
           mainindex: 'Main',
         },
           about: {
-          mainindex: '<a href="#">Main</a>',
+          mainindex: '<a href="#main">Main</a>',
         },
           contact: {
-          mainindex: '<a href="#">Main</a>',
+          mainindex: '<a href="#main">Main</a>',
         },
           loadmore: {
           mainindex: 'Main',
         },
         error: {
-          mainindex: '<a href="#">Main</a>',
+          mainindex: '<a href="#main">Main</a>',
       },
       };
     },

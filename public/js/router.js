@@ -1,11 +1,11 @@
-define(['jquery', 'underscore', 'backbone', 'views/default', 'views/about', 'views/contact'],
-function ($, _, Backbone, DefaultView, AboutView, ContactView) {
+define(['jquery', 'underscore', 'backbone', 'views/default', 'views/about', 'views/contact', 'views/pages'],
+function ($, _, Backbone, DefaultView, AboutView, ContactView, MultiPageCollection) {
   var SiteRouter = Backbone.Router.extend({
     routes: {
       'about' : 'aboutAction',
       'contact' : 'contactAction',
       'loadmore' : 'loadmoreAction',
-      '': 'mainAction',
+      'main': 'mainAction',
       '*other': 'errorAction',
     }
   });
@@ -13,6 +13,10 @@ function ($, _, Backbone, DefaultView, AboutView, ContactView) {
   var initialize = function () {
     var siteRouter = new SiteRouter();
     var defaultView = new DefaultView();
+    var pagesCollection = new MultiPageCollection();
+      siteRouter.on('route:loadmoreAction', function(){
+        pagesCollection.render('loadmore');
+      });
     siteRouter.on('route:errorAction', function(){
       defaultView.render('error');
     });
@@ -24,9 +28,6 @@ function ($, _, Backbone, DefaultView, AboutView, ContactView) {
     });
     siteRouter.on('route:mainAction', function(){
       defaultView.render('main');
-    });
-    siteRouter.on('route:loadmoreAction', function(){
-      defaultView.render('loadmore');
     });
     Backbone.history.start();
   };
