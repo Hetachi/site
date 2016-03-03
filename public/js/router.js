@@ -1,10 +1,11 @@
-define(['jquery', 'underscore', 'backbone', 'views/default', 'views/about', 'views/contact'],
-function ($, _, Backbone, DefaultView, AboutView, ContactView) {
+define(['jquery', 'underscore', 'backbone', 'views/default', 'views/about', 'views/contact', 'views/pages'],
+function ($, _, Backbone, DefaultView, AboutView, ContactView, MultiPageView) {
   var SiteRouter = Backbone.Router.extend({
     routes: {
       'about' : 'aboutAction',
       'contact' : 'contactAction',
-      '': 'mainAction',
+      'loadmore' : 'loadmoreAction',
+      '' : 'mainAction',
       '*other': 'errorAction',
     }
   });
@@ -12,6 +13,10 @@ function ($, _, Backbone, DefaultView, AboutView, ContactView) {
   var initialize = function () {
     var siteRouter = new SiteRouter();
     var defaultView = new DefaultView();
+    var pagesView = new MultiPageView();
+    siteRouter.on('route:loadmoreAction', function(){
+      pagesView.render('loadmore');
+    });
     siteRouter.on('route:errorAction', function(){
       defaultView.render('error');
     });
