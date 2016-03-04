@@ -20,7 +20,6 @@
 .pages--container {
   min-height: 250px;
   position: relative;
-  width: 315px;
   float: left;
   margin: 20px;
   text-align: justify;
@@ -43,6 +42,9 @@
           color: #275CA2;
           text-shadow: 1px 1px black;
           text-decoration: underline; } }
+
+.pages--container--collection {
+  width: 33%; }
 
 /* Pages css ends */
 .nav--items {

@@ -12,3 +12,11 @@ text
 
 gulp and chef to automate installations
 vagrant for virtualization
+
+
+Installing sqlite:
+npm install sqlite3
+and editor = sqliteman
+
+
+js ari BEM izmanto ?

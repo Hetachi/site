@@ -51,12 +51,14 @@ $font-stack:    Helvetica, sans-serif;
     }
     min-height: 250px;
     position: relative;
-    width: 315px;
     float: left;
     margin: 20px;
     text-align: justify;
     text-justify: inter-word;
   }
+.pages--container--collection {
+  width: 33%;
+}
 /* Pages css ends */
 .nav--items {
   @include padding(10px);

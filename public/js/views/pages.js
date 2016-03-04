@@ -1,19 +1,21 @@
-define(['jquery', 'underscore', 'backbone', 'mustache', '/js/collections/pages.js','text!/templates/pages.mustache'], function ($, _, Backbone, Mustache, PagesCollection, pagesTemplate) {
-  var MultiPageView = Backbone.View.extend({
-    elPages: $('.content'),
-    collection: {},
+define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 'text!/templates/pages.mustache'], function ($, _, Backbone, Mustache, PageModel, pageidTemplate) {
+  var PageidView = Backbone.View.extend({
+    elPageid: $('.content'),
+    model: {},
 
-    initialize: function() {
-      this.collection = new PagesCollection();
-      this.collection.on("sync", this.render, this);
-      this.collection.fetch();
+    initialize: function(pid) {
+      this.model = new  PageModel({id:pid});
+      this.model.on("sync", this.render, this);
+      this.model.fetch();
+      console.log('initialize function');
     },
 
     render: function(pageType){
-      this.data = this.collection.toJSON();
-      var compiledPagesTemplate = Mustache.render(pagesTemplate, this);
-      this.elPages.html(compiledPagesTemplate);
+      this.data5 = this.model.toJSON();
+      var compiledPageidTemplate = Mustache.render(pageidTemplate, this);
+      this.elPageid.html(compiledPageidTemplate);
+      console.log('render function');
     }
   });
-  return MultiPageView;
+  return PageidView;
 });

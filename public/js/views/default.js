@@ -1,7 +1,7 @@
-define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 'text!/templates/page.mustache', 'text!/templates/head.mustache','text!/templates/mainmenu.mustache', 'text!/templates/error.mustache'], function ($, _, Backbone, Mustache, PageModel, pageTemplate, headTemplate, menuTemplate, errorTemplate) {
+define(['jquery', 'underscore', 'backbone', 'mustache', 'text!/templates/page.mustache', 'text!/templates/head.mustache','text!/templates/mainmenu.mustache', 'text!/templates/error.mustache'], function ($, _, Backbone, Mustache, pageTemplate, headTemplate, menuTemplate, errorTemplate) {
   var DefaultView = Backbone.View.extend({
-    el: $('.content'),
-    data: {},
+    el1: $('.content'),
+    data1: {},
 
     el2: $('.sitetitle'),
     data2: {},
@@ -10,7 +10,7 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 't
     data3: {},
 
     initialize: function() {
-      this.data = {
+      this.data1 = {
           main: {
           title: 'Main',
           content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.t in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -78,8 +78,8 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/models/page.js', 't
         var debugtext = pageType + " page loaded";
         console.log(debugtext);
       }
-      var compiledTemplate = Mustache.render( pageTemplate, this.data[pageType] );
-      this.$el.html( compiledTemplate );
+      var compiledTemplate = Mustache.render( pageTemplate, this.data1[pageType] );
+      this.el1.html( compiledTemplate );
 
       var compiledHeadTemplate = Mustache.render( headTemplate, this.data2[pageType] );
       this.el2.html( compiledHeadTemplate );

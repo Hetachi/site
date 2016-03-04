@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'views/default', 'views/pages', 'views/pageid'],
+define(['jquery', 'underscore', 'backbone', 'views/default', 'views/collections', 'views/pages'],
 function ($, _, Backbone, DefaultView, MultiPageView, PageidView) {
   var SiteRouter = Backbone.Router.extend({
     routes: {
@@ -14,9 +14,11 @@ function ($, _, Backbone, DefaultView, MultiPageView, PageidView) {
   var initialize = function () {
     var siteRouter = new SiteRouter();
     var defaultView = new DefaultView();
-    var pagesView = new MultiPageView();
     siteRouter.on('route:loadmoreAction', function(){
-      pagesView.render('loadmore');
+        var pagesView = new MultiPageView();
+    });
+    siteRouter.on('route:pageidAction', function(id){
+        var pageidView = new PageidView(id);
     });
     siteRouter.on('route:errorAction', function(){
       defaultView.render('error');
