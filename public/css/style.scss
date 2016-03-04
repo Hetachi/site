@@ -8,26 +8,54 @@ $font-stack:    Helvetica, sans-serif;
   float:left;
   margin: 10px;
 }
-  @media (max-width: 640px)  {
-    .pages--images {
-        display:none;
-    }
-    .pages--content {
-      text-align: justify;
-      text-justify: inter-word;
-    }
-    .pages--container {
-      min-height: 150px
-    }
-  }
+
 .pages--images{
+  @media (max-width: 640px)  {
+    float: none;
+    margin: 10px;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: -10px;
+  }
   @include img--wrap;
+}
+.footer {
+  width: 100%;
+  float:left;
 }
   .pages--container {
     @media (max-width: 640px) {
       min-height: 100px;
+      .pages--content {
+        padding: 10px;
+        color: white;
+        text-shadow: 1px 1px black;
+      }
+      .pages--title {
+        padding: 10px;
+        a {
+          color: white;
+          text-shadow: 1px 1px black;
+          text-decoration: none;
+          font-weight: bold;
+        }
+        a:hover {
+          color: #275CA2;
+          text-shadow: 1px 1px black;
+          text-decoration: underline;
+        }
+      }
     }
-      min-height: 250px;
+    min-height: 250px;
+    position: relative;
+    width: 315px;
+    float: left;
+    margin: 20px;
+    text-align: justify;
+    text-justify: inter-word;
   }
 /* Pages css ends */
 .nav--items {
@@ -44,6 +72,10 @@ $font-stack:    Helvetica, sans-serif;
 body {
   padding-left: 30px;
   padding-right: 30px;
+}
+.content {
+  position: relative;
+  height:100%;
 }
   .nav--link {
     text-decoration: none;

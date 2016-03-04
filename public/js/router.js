@@ -1,9 +1,10 @@
-define(['jquery', 'underscore', 'backbone', 'views/default', 'views/about', 'views/contact', 'views/pages'],
-function ($, _, Backbone, DefaultView, AboutView, ContactView, MultiPageView) {
+define(['jquery', 'underscore', 'backbone', 'views/default', 'views/pages', 'views/pageid'],
+function ($, _, Backbone, DefaultView, MultiPageView, PageidView) {
   var SiteRouter = Backbone.Router.extend({
     routes: {
       'about' : 'aboutAction',
       'contact' : 'contactAction',
+      'page/:id' : 'pageidAction',
       'loadmore' : 'loadmoreAction',
       '' : 'mainAction',
       '*other': 'errorAction',
