@@ -9,6 +9,7 @@ define(['jquery', 'underscore', 'backbone', 'mustache', 'text!/templates/page.mu
     el3: $('.mainindex'),
     data3: {},
 
+
     initialize: function() {
       this.data1 = {
           main: {
@@ -72,6 +73,8 @@ define(['jquery', 'underscore', 'backbone', 'mustache', 'text!/templates/page.mu
       },
       };
     },
+
+
 
     render: function(pageType){
       if (debug === "TRUE") {

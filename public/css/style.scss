@@ -54,6 +54,8 @@ $font-stack:    Helvetica, sans-serif;
     float: left;
     margin: 20px;
     text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-justify: inter-word;
   }
 .pages--container--collection {

@@ -1,5 +1,5 @@
-define(['jquery', 'underscore', 'backbone', 'views/default', 'views/collections', 'views/pages'],
-function ($, _, Backbone, DefaultView, MultiPageView, PageidView) {
+define(['jquery', 'underscore', 'backbone', 'views/default', 'views/collections', 'views/pages', 'views/form'],
+function ($, _, Backbone, DefaultView, MultiPageView, PageidView, FormView) {
   var SiteRouter = Backbone.Router.extend({
     routes: {
       'about' : 'aboutAction',
@@ -7,6 +7,7 @@ function ($, _, Backbone, DefaultView, MultiPageView, PageidView) {
       'page/:id' : 'pageidAction',
       'loadmore' : 'loadmoreAction',
       '' : 'mainAction',
+      'form' : 'formAction',
       '*other': 'errorAction',
     }
   });
@@ -31,6 +32,9 @@ function ($, _, Backbone, DefaultView, MultiPageView, PageidView) {
     });
     siteRouter.on('route:mainAction', function(){
       defaultView.render('main');
+    });
+    siteRouter.on('route:formAction', function(){
+        var formView = new FormView();
     });
     Backbone.history.start();
   };

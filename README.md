@@ -20,3 +20,8 @@ and editor = sqliteman
 
 
 js ari BEM izmanto ?
+
+
+
+BOOK TO READ:
+https://addyosmani.com/backbone-fundamentals/#views-1

@@ -3,11 +3,19 @@ define(['jquery', 'underscore', 'backbone', 'mustache', '/js/collections/pages.j
     elPages: $('.content'),
     collection: {},
 
+    events: {
+      "click .delete" : "deleteAction"
+    },
     initialize: function() {
       this.collection = new  PagesCollection();
       this.collection.on("sync", this.render, this);
       this.collection.fetch();
       console.log('Pages collection set Multiple');
+    },
+
+    deleteAction: function(e) {
+    var pid = $(e.target).data('item');
+    this.collection.remove(pid);
     },
 
     render: function(pageType){

@@ -23,6 +23,8 @@
   float: left;
   margin: 20px;
   text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-justify: inter-word; }
   @media (max-width: 640px) {
     .pages--container {
